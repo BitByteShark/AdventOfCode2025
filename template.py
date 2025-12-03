@@ -17,7 +17,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     
     day = 
-    year = 2024
+    year = 2025
     
     puzzle_input = get_data(day=day, year=year)
     data = parse(puzzle_input)
