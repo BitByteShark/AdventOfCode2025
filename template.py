@@ -11,6 +11,7 @@ def part2(data):
     return
 
 if __name__ == "__main__":
+    import timeit
     from aocd import get_data, submit
     #aocd-token at ~/.config/aocd/token
     
@@ -20,10 +21,15 @@ if __name__ == "__main__":
     year = 2025
     
     puzzle_input = get_data(day=day, year=year)
-    data = parse(puzzle_input)
     
-    solution1 = part1(data)
+    t1 = timeit.default_timer()
+    solution1 = part1(parse(puzzle_input))
+    t2 = timeit.default_timer()
+    logging.info(f"Solving P1 took: {t2-t1} sec")
     submit(solution1, part="a")
     
-    solution2 = part2(data)
+    t3 = timeit.default_timer()
+    solution2 = part2(parse(puzzle_input))
+    t4 = timeit.default_timer()
+    logging.info(f"Solving P2 took: {t4-t3} sec")
     submit(solution2, part="b")
